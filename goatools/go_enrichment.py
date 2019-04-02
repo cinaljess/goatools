@@ -247,9 +247,9 @@ class GOEnrichmentStudy(object):
 
     def __init__(self, pop, assoc, obo_dag, propagate_counts=True, alpha=.05, methods=None, **kws):
         self.log = kws['log'] if 'log' in kws else sys.stdout
-        self._run_multitest = {
-            'local':lambda iargs: self._run_multitest_local(iargs),
-            'statsmodels':lambda iargs: self._run_multitest_statsmodels(iargs)}
+        self._run_multitest = {}
+            #'local':lambda iargs: self._run_multitest_local(iargs),
+            #'statsmodels':lambda iargs: self._run_multitest_statsmodels(iargs)}
         self.pop = set(pop)
         self.pop_n = len(pop)
         self.assoc = assoc
