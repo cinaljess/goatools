@@ -365,7 +365,8 @@ class GOEnrichmentStudy(object):
         ntobj = cx.namedtuple("ntobj", "results pvals alpha nt_method study")
         for nt_method in usrmethod_flds:
             ntmt = ntobj(results, pvals, alpha, nt_method, study)
-            self._run_multitest[nt_method.source](ntmt)
+            #self._run_multitest[nt_method.source](ntmt) #AC
+            self._run_multitest_statsmodels(ntmt)
             if log is not None:
                 self._log_multitest_corr(log, results, ntmt, alpha)
 
